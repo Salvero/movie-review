@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @review = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   def new
